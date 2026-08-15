@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI Assistant frontend prototype using the supplied logo and visual assets." />
+  <title>AI Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <div class="decor-orb" aria-hidden="true"></div>
+
+    <section class="assistant-window" aria-label="AI Assistant">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-logo-wrap">
+            <img src="assets/ready.png" alt="" class="brand-logo" />
+          </div>
+          <div>
+            <h1>AI Assistant</h1>
+            <p>Simple • Smart • Ready</p>
+          </div>
+        </div>
+
+        <button id="resetButton" class="reset-button" type="button" aria-label="Reset assistant">
+          <span class="reset-icon">↻</span>
+          <span>Reset</span>
+        </button>
+      </header>
+
+      <section class="hero" aria-live="polite">
+        <div id="assistantLogo" class="assistant-logo state-greeting">
+          <div class="logo-halo halo-one"></div>
+          <div class="logo-halo halo-two"></div>
+          <div class="logo-image-frame">
+            <img id="stateLogo" src="assets/hello.png" alt="AI assistant greeting" />
+          </div>
+          <div class="state-sparkles" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+
+        <h2 id="statusText">Hello! 👋</h2>
+        <p id="statusHint">Your assistant is getting ready.</p>
+      </section>
+
+      <section class="response-panel" aria-label="Conversation">
+        <div class="panel-heading">
+          <span class="online-dot"></span>
+          <span>AI Response</span>
+          <span class="panel-status">Frontend Prototype</span>
+        </div>
+        <div id="responseArea" class="response-area">
+          <div class="empty-state">
+            <div class="empty-logo">
+              <img src="assets/ready.png" alt="" />
+            </div>
+            <p>Ask your AI assistant something.</p>
+            <span>Your response will appear here.</span>
+          </div>
+        </div>
+      </section>
+
+      <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+
+      <form id="inputForm" class="input-area">
+        <label class="sr-only" for="messageInput">Type your message</label>
+        <textarea
+          id="messageInput"
+          rows="1"
+          maxlength="1000"
+          placeholder="Type your message..."
+          autocomplete="off"
+          spellcheck="true"
+        ></textarea>
+
+        <div class="input-actions">
+          <button
+            id="voiceButton"
+            class="voice-button"
+            type="button"
+            aria-label="Start voice input"
+            title="Voice input"
+          >
+            <span id="voiceIcon">🎤</span>
+            <span id="voiceLabel">Voice</span>
+          </button>
+
+          <button id="sendButton" class="send-button" type="submit" aria-label="Send message" title="Send message">
+            ➤
+          </button>
+        </div>
+      </form>
+
+      <p class="footer-note">Your supplied AI logos &amp; visual design • AI response is simulated</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
